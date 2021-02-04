@@ -7,4 +7,8 @@ public class Attack extends Moves{
         super(name, type, category, powerPoints, accuracy);
         this.power = power;
     }
+
+    public int getPower(){
+        return this.power;
+    }
 }

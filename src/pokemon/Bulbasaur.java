@@ -1,5 +1,7 @@
 package pokemon;
 
+import moves.Moves;
+
 public class Bulbasaur extends Pokemon{
     protected final static String name = "Bulbasaur";
     protected final static int baseHP = 45;
@@ -29,6 +31,11 @@ public class Bulbasaur extends Pokemon{
 
     public int expToNextLevel(int level) {
        return (int) (((6/5)*Math.pow((level+1),3))-(15*Math.pow((level+1),2))+(100*(level+1))-140);
+    }
+
+
+    public Moves[] pullMoveList() {
+        Moves[] moves = BulbasaurMoves.findBulbasaurMoves();
     }
 
 

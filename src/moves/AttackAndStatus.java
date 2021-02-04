@@ -11,4 +11,16 @@ public class AttackAndStatus extends Moves{
         this.status = status;
         this.statusChance = statusChance;
     }
+
+    public int getPower(){
+        return this.power;
+    }
+
+    public String getStatus(){
+        return this.status;
+    }
+
+    public int getStatusChance(){
+        return this.statusChance;
+    }
 }

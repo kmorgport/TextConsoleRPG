@@ -1,5 +1,7 @@
 package pokemon;
 
+import moves.Moves;
+
 abstract class Pokemon {
     protected String name;
     protected int level;
@@ -201,5 +203,8 @@ abstract class Pokemon {
         }
         this.currentExpTotal = baseExp;
     }
+
+    abstract public Moves[] pullMoveList();
+
 
 }

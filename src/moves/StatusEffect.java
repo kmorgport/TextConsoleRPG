@@ -9,4 +9,12 @@ public class StatusEffect extends Moves{
         this.status = status;
         this.statusChance = statusChance;
     }
+
+    public String getStatus(){
+        return this.status;
+    }
+
+    public int getStatusChance(){
+        return this.statusChance;
+    }
 }

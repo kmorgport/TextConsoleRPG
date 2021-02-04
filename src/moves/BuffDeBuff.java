@@ -11,4 +11,16 @@ public class BuffDeBuff extends Moves{
         this.buffDebuffType = buffDebuffType;
         this.buffDebuffChance = buffDebuffChance;
     }
+
+    public int getBuffDebuffInteger(){
+        return this.buffDebuffInteger;
+    }
+
+    public String getBuffDebuffType(){
+        return this.buffDebuffType;
+    }
+
+    public int getBuffDebuffChance(){
+        return this.buffDebuffChance;
+    }
 }
