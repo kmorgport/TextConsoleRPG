@@ -1,6 +1,6 @@
 package pokemon;
 
-public class Pokemon {
+abstract class Pokemon {
     protected String name;
     protected int level;
     protected int hitPoints;
@@ -158,9 +158,18 @@ public class Pokemon {
         increaseSpeedEV(evs[5]);
     }
 
-//    public int calcExpGained(boolean wild, boolean owner, int baseEx, int lev){
-//
-//    }
+    public int calcExpGained(boolean wild, boolean owner, int baseEx, int lev, int s){
+        if(!wild && !owner){
+            return (int) Math.round((1.5*1.5*baseEx*1*lev)/7*s);
+        }else if(wild && !owner){
+            return (int) Math.round((1*1.5*baseEx*1*lev)/7*s);
+        }else if(!wild){
+            return (int) Math.round((1.5*1*baseEx*1*lev)/7*s);
+        }else {
+            return Math.round((baseEx * lev)/7*s);
+        }
+    }
 
+    public abstract int expToNextLevel(int level);
 
 }

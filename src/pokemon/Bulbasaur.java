@@ -7,6 +7,8 @@ public class Bulbasaur extends Pokemon{
     protected final static int baseSpecialAttack = 65;
     protected final static int baseSpecialDefense = 65;
     protected final static int baseSpeed = 45;
+    protected final static int baseExp = 64;
+    protected int expToNextLevel;
     protected final static String type1 = "Grass";
     protected final static String type2 = "Poison";
 
@@ -19,6 +21,10 @@ public class Bulbasaur extends Pokemon{
         this.specialAttack = findStat(baseSpecialAttack,specAttIV,0,5);
         this.specialDefense = findStat(baseSpecialDefense,specDefIV,0,5);
         this.speed = findStat(baseSpeed,speedIV,0,5);
+    }
+
+    public int expToNextLevel(int level) {
+       return (int) (((6/5)*Math.pow(level,3))-(15*Math.pow(level,2))+(100*level)-140);
     }
 
 }
