@@ -35,7 +35,12 @@ public class Bulbasaur extends Pokemon{
 
 
     public Moves[] pullMoveList() {
-        Moves[] moves = BulbasaurMoves.findBulbasaurMoves();
+        Moves[] allmoves = BulbasaurMoves.findBulbasaurMoves();
+        Moves[] moveset = new Moves[4];
+        for(int i=0; i<allmoves.length; i++){
+            moveset[i]= allmoves[i];
+        }
+        return moveset;
     }
 
 
