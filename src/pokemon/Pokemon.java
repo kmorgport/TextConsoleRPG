@@ -28,8 +28,9 @@ abstract class Pokemon {
     protected int speedEV;
     protected int baseSpeed;
     protected double critHitRate;
-    protected int evasiveness;
-    protected int expTotal;
+    protected int evasiveness = 100;
+    protected int currentExpTotal;
+    protected int expToNextLevel;
     protected int baseExp;
 
 
@@ -51,6 +52,10 @@ abstract class Pokemon {
 
     public int findStat(int base, int iv, int ev, int level){
         return (int) Math.round(((((base+iv)*2+(Math.sqrt(ev)/4))*level)/100)+5);
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public int getLevel(){
@@ -170,6 +175,31 @@ abstract class Pokemon {
         }
     }
 
+    public int getBaseExp(){
+        return baseExp;
+    }
+
+    public int getCurrentExpTotal(){
+        return this.currentExpTotal;
+    }
+
+    public int getExpToNextLevel(){
+        return this.expToNextLevel;
+    }
+
     public abstract int expToNextLevel(int level);
+
+    public void setExpToNextLevel(int exp){
+        this.expToNextLevel = currentExpTotal+exp;
+    }
+
+    public void experienceBaseLineForNewPokemon(int level) {
+        int baseExp = 0;
+        for(int i =1; i<=level; i++){
+            int levelExp = expToNextLevel(level);
+            baseExp += levelExp;
+        }
+        this.currentExpTotal = baseExp;
+    }
 
 }
