@@ -34,4 +34,6 @@ abstract public class Moves {
     public int getAccuracy(){
         return this.accuracy;
     }
+
+    abstract public int getPower();
 }

@@ -17,4 +17,9 @@ public class StatusEffect extends Moves{
     public int getStatusChance(){
         return this.statusChance;
     }
+
+    @Override
+    public int getPower() {
+        return 0;
+    }
 }
