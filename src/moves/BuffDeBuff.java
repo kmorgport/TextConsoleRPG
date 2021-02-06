@@ -23,4 +23,9 @@ public class BuffDeBuff extends Moves{
     public int getBuffDebuffChance(){
         return this.buffDebuffChance;
     }
+
+    @Override
+    public int getPower() {
+        return 0;
+    }
 }
