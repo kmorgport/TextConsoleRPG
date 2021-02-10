@@ -4,20 +4,20 @@ import moves.Moves;
 
 public class Bulbasaur extends Pokemon{
     protected final static String name = "Bulbasaur";
-    protected final static int baseHP = 45;
-    protected final static int baseAttack = 49;
-    protected final static int baseDefense = 49;
-    protected final static int baseSpecialAttack = 65;
-    protected final static int baseSpecialDefense = 65;
-    protected final static int baseSpeed = 45;
     protected int currentExpTotal;
     protected int expToNextLevel;
-    protected final static String type1 = "Grass";
-    protected final static String type2 = "Poison";
 
     public Bulbasaur(int level, int hpIV, int attackIV, int defenseIV, int specAttIV, int specDefIV, int speedIV) {
         super(level, hpIV, attackIV, defenseIV, specAttIV, specDefIV, speedIV);
         this.currentExpTotal = 0;
+        baseHP = 45;
+        baseAttack = 49;
+        baseDefense = 49;
+        baseSpecialAttack = 65;
+        baseSpecialDefense = 65;
+        baseSpeed = 45;
+        types.add("Grass");
+        types.add("Poison");
         this.hitPoints = findHP(baseHP,hpIV,0,level);
         this.attack = findStat(baseAttack,attackIV,0,level);
         this.defense = findStat(baseDefense,defenseIV,0,level);

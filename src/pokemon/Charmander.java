@@ -4,12 +4,6 @@ import moves.Moves;
 
 public class Charmander extends Pokemon{
     protected final static String name = "Charmander";
-    protected final static int baseHP = 39;
-    protected final static int baseAttack = 52;
-    protected final static int baseDefense = 43;
-    protected final static int baseSpecialAttack = 60;
-    protected final static int baseSpecialDefense = 50;
-    protected final static int baseSpeed = 65;
     protected int currentExpTotal;
     protected int expToNextLevel;
     protected final static String type1 = "Fire";
@@ -18,6 +12,12 @@ public class Charmander extends Pokemon{
     public Charmander(int level, int hpIV, int attackIV, int defenseIV, int specAttIV, int specDefIV, int speedIV) {
         super(level, hpIV, attackIV, defenseIV, specAttIV, specDefIV, speedIV);
         this.currentExpTotal = 0;
+        baseHP = 39;
+        baseAttack = 52;
+        baseDefense = 43;
+        baseSpecialAttack = 60;
+        baseSpecialDefense = 50;
+        baseSpeed = 65;
         this.hitPoints = findHP(baseHP,hpIV,0,level);
         this.attack = findStat(baseAttack,attackIV,0,level);
         this.defense = findStat(baseDefense,defenseIV,0,level);

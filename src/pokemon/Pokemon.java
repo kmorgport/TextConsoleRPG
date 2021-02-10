@@ -2,8 +2,10 @@ package pokemon;
 
 import moves.Moves;
 
-abstract class Pokemon {
-    protected String name;
+import java.util.ArrayList;
+
+public abstract class Pokemon {
+    protected static String name;
     protected int level;
     protected int hitPoints;
     protected int baseHP;
@@ -34,6 +36,7 @@ abstract class Pokemon {
     protected int currentExpTotal;
     protected int expToNextLevel;
     protected int baseExp;
+    protected ArrayList<String> types;
 
 
     Pokemon(int level, int hpIV, int attackIV, int defenseIV, int specAttIV, int specDefIV, int speedIV){
@@ -54,10 +57,6 @@ abstract class Pokemon {
 
     public int findStat(int base, int iv, int ev, int level){
         return (int) Math.round(((((base+iv)*2+(Math.sqrt(ev)/4))*level)/100)+5);
-    }
-
-    public String getName(){
-        return this.name;
     }
 
     public int getLevel(){
@@ -89,6 +88,8 @@ abstract class Pokemon {
         return this.attack;
     }
 
+    public int getAttackEV(){return this.attackEV;}
+
     public void setAttack(int attack){
         this.attack = attack;
     }
@@ -100,6 +101,8 @@ abstract class Pokemon {
     public int getDefense(){
         return this.defense;
     }
+
+    public int getDefenseEV(){return this.defenseEV;}
 
     public void setDefense(int defense){
         this.defense = defense;

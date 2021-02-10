@@ -1,4 +1,4 @@
-package pokemon;
+package Gameplay;
 
 import moves.Moves;
 
